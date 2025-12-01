@@ -5,80 +5,210 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lawrence Alaso Krukrubo - AI Safety Researcher</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        h1 { margin-bottom: 5px; color: #222; }
-        .subtitle { color: #666; font-size: 1.1em; }
-        .links { margin-top: 15px; }
-        .links a { margin: 0 10px; color: #0066cc; text-decoration: none; font-weight: 500; }
-        .links a:hover { text-decoration: underline; }
-        .section-title { font-size: 1.4em; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px; margin-top: 40px; margin-bottom: 20px; color: #444; }
-        .paper { margin-bottom: 20px; }
-        .paper-title { font-weight: bold; color: #222; }
-        .paper-meta { color: #666; font-size: 0.9em; margin-bottom: 5px; }
-        .btn { display: inline-block; padding: 5px 10px; background: #f4f4f4; color: #333; text-decoration: none; border-radius: 4px; font-size: 0.85em; border: 1px solid #ddd; }
-        .btn:hover { background: #e0e0e0; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #f0f0f0; }
+        /* Modern Reset & Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; 
+            line-height: 1.7; 
+            color: #2d3748; 
+            background-color: #f7fafc; /* Subtle light grey background */
+            padding: 40px 20px;
+        }
+
+        /* The "Card" Container */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Soft shadow for depth */
+        }
+
+        /* Header Layout (Flexbox) */
+        header { 
+            display: flex; 
+            align-items: center; 
+            gap: 30px; 
+            margin-bottom: 50px; 
+            border-bottom: 1px solid #edf2f7; 
+            padding-bottom: 30px;
+        }
+        
+        /* Responsive Header for Mobile */
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+        }
+
+        .header-content { flex: 1; }
+        
+        .profile-img { 
+            width: 160px; 
+            height: 160px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid #fff; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        }
+
+        h1 { 
+            font-size: 2.2rem; 
+            color: #1a202c; 
+            margin-bottom: 8px; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle { 
+            color: #4a5568; 
+            font-size: 1.1rem; 
+            font-weight: 500;
+            margin-bottom: 20px; 
+        }
+
+        /* Links & Buttons */
+        .links a { 
+            display: inline-block;
+            margin-right: 15px; 
+            color: #3182ce; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.2s;
+        }
+        .links a:hover { color: #2c5282; text-decoration: underline; }
+
+        /* Sections */
+        section { margin-bottom: 50px; }
+        
+        .section-title { 
+            font-size: 1.5rem; 
+            color: #2d3748; 
+            border-left: 5px solid #3182ce; /* Blue accent line */
+            padding-left: 15px; 
+            margin-bottom: 25px; 
+            font-weight: 700;
+        }
+
+        p { margin-bottom: 18px; text-align: left; } /* Clean left alignment is better for web reading than justify */
+
+        /* Paper/Project Cards */
+        .paper { 
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        .paper:hover { transform: translateY(-2px); border-color: #cbd5e0; }
+
+        .paper-title { 
+            font-size: 1.15rem; 
+            font-weight: 700; 
+            color: #2d3748; 
+            margin-bottom: 5px;
+        }
+        
+        .paper-meta { 
+            color: #718096; 
+            font-size: 0.9rem; 
+            margin-bottom: 12px; 
+            font-style: italic;
+        }
+
+        /* PDF Button Style */
+        .btn { 
+            display: inline-block; 
+            padding: 6px 14px; 
+            background-color: #3182ce; 
+            color: #ffffff !important; 
+            text-decoration: none !important; 
+            border-radius: 6px; 
+            font-size: 0.85rem; 
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background-color: #2b6cb0; }
+
+        /* List Styling */
+        ul { list-style-type: none; padding-left: 5px; }
+        li { 
+            margin-bottom: 12px; 
+            position: relative; 
+            padding-left: 20px; 
+        }
+        li::before {
+            content: "•";
+            color: #3182ce;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="./assets/prof_pic.jpg" alt="Lawrence Krukrubo" class="profile-img">
-    
-    <h1>Lawrence Alaso Krukrubo</h1>
-    <div class="subtitle">AI Safety Researcher & Lecturer | University of Wolverhampton</div>
-    
-    <div class="links">
-        <a href="./assets/Lawrence_Krukrubo_CV.pdf">CV</a>
-        <a href="https://scholar.google.com/citations?user=o_Lt1zYAAAAJ&hl=en">Google Scholar</a>
-        <a href="https://github.com/Lawrence-Krukrubo">GitHub</a>
-        <a href="https://linkedin.com/in/lawrencekrukrubo">LinkedIn</a>
-    </div>
-</header>
+<div class="container">
+    <header>
+        <img src="./assets/prof_pic.jpg" alt="Lawrence Krukrubo" class="profile-img">
+        
+        <div class="header-content">
+            <h1>Lawrence Alaso Krukrubo</h1>
+            <div class="subtitle">AI Safety Researcher & Lecturer | University of Wolverhampton</div>
+            
+            <div class="links">
+                <a href="./assets/Lawrence_Krukrubo_CV.pdf">CV</a>
+                <a href="https://scholar.google.com/citations?user=o_Lt1zYAAAAJ&hl=en">Google Scholar</a>
+                <a href="https://github.com/Lawrence-Krukrubo">GitHub</a>
+                <a href="https://linkedin.com/in/lawrencekrukrubo">LinkedIn</a>
+            </div>
+        </div>
+    </header>
 
-<section>
-    <div class="section-title">About Me</div>
-    <p>
-        I am an Academic Researcher and Data Scientist specialising in <strong>AI Safety</strong>, <strong>Causal Fairness</strong>, and <strong>Explainable AI (XAI)</strong>.
-    </p>
-    <p>
-        Currently pursuing a PhD at the <strong>University of Wolverhampton</strong>, my work focuses on mitigating algorithmic bias amplification in LLM-enhanced systems. I move beyond correlation-based metrics to use <strong>Causal Structural Modelling</strong>, analysing "rich-get-richer" feedback loops where LLM latent representations amplify pre-existing biases.
-    </p>
-    <p>
-        In addition to my academic work, I am a <strong>Visiting Member</strong> at the <strong>London Initiative for Safe AI (LISA)</strong> and a participant in the <strong>Bluedot Impact</strong> Technical AI Safety curriculum. I combine a distinction-level academic background with practical industry experience to bridge the gap between theoretical fairness frameworks and robust, deployable machine learning systems.
-    </p>
-</section>
-
-<section>
-    <div class="section-title">Selected Research</div>
-    
-    <div class="paper">
-        <div class="paper-title">Improving Credit Approval Decisions with Explainable Machine Learning</div>
-        <div class="paper-meta">MSc Dissertation, University of Wolverhampton (2023)</div>
+    <section>
+        <div class="section-title">About Me</div>
         <p>
-            Deployed IBM’s Contrastive Explanation Method (CEM) to improve transparency in "Black-box" Deep Neural Networks. Decomposed predictions into Pertinent Negatives (PN) and Pertinent Positives (PP) to provide actionable counterfactual explanations.
+            I am an Academic Researcher and Data Scientist specialising in <strong>AI Safety</strong>, <strong>Causal Fairness</strong>, and <strong>Explainable AI (XAI)</strong>.
         </p>
-        <a href="./assets/krukrubo_dissertation_2023.pdf" class="btn">PDF</a>
-    </div>
-
-    <div class="paper">
-        <div class="paper-title">Causal Fairness in LLM-Enhanced Recommender Systems</div>
-        <div class="paper-meta">PhD Roadmap & Position Paper (Current)</div>
         <p>
-            Investigating the causal mechanisms of distributional harms in multi-sided platforms. Developing LLM-driven post-processing re-ranking modules to enforce multi-stakeholder fairness constraints.
+            Currently pursuing a PhD at the <strong>University of Wolverhampton</strong>, my work focuses on mitigating algorithmic bias amplification in LLM-enhanced systems. I move beyond correlation-based metrics to use <strong>Causal Structural Modelling</strong>, analysing "rich-get-richer" feedback loops where LLM latent representations amplify pre-existing biases.
         </p>
-    </div>
-</section>
+        <p>
+            In addition to my academic work, I am a <strong>Visiting Member</strong> at the <strong>London Initiative for Safe AI (LISA)</strong> and a participant in the <strong>Bluedot Impact</strong> Technical AI Safety curriculum. I combine a distinction-level academic background with practical industry experience to bridge the gap between theoretical fairness frameworks and robust, deployable machine learning systems.
+        </p>
+    </section>
 
-<section>
-    <div class="section-title">Updates</div>
-    <ul>
-        <li><strong>2024:</strong> Joined the <strong>London Initiative for Safe AI (LISA)</strong> as a Visiting Member.</li>
-        <li><strong>2024:</strong> Selected for the <strong>Bluedot Impact</strong> Technical AI Safety curriculum (Defense-in-Depth track).</li>
-        <li><strong>Jan 2024:</strong> Started PhD in Computer Science at University of Wolverhampton.</li>
-    </ul>
-</section>
+    <section>
+        <div class="section-title">Selected Research</div>
+        
+        <div class="paper">
+            <div class="paper-title">Improving Credit Approval Decisions with Explainable Machine Learning</div>
+            <div class="paper-meta">MSc Dissertation, University of Wolverhampton (2023)</div>
+            <p>
+                Deployed IBM’s Contrastive Explanation Method (CEM) to improve transparency in "Black-box" Deep Neural Networks. Decomposed predictions into Pertinent Negatives (PN) and Pertinent Positives (PP) to provide actionable counterfactual explanations.
+            </p>
+            <a href="./assets/krukrubo_dissertation_2023.pdf" class="btn">PDF</a>
+        </div>
+
+        <div class="paper">
+            <div class="paper-title">Causal Fairness in LLM-Enhanced Recommender Systems</div>
+            <div class="paper-meta">PhD Roadmap & Position Paper (Current)</div>
+            <p>
+                Investigating the causal mechanisms of distributional harms in multi-sided platforms. Developing LLM-driven post-processing re-ranking modules to enforce multi-stakeholder fairness constraints.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Updates</div>
+        <ul>
+            <li><strong>2024:</strong> Joined the <strong>London Initiative for Safe AI (LISA)</strong> as a Visiting Member.</li>
+            <li><strong>2024:</strong> Selected for the <strong>Bluedot Impact</strong> Technical AI Safety curriculum (Defense-in-Depth track).</li>
+            <li><strong>Jan 2024:</strong> Started PhD in Computer Science at University of Wolverhampton.</li>
+        </ul>
+    </section>
+</div>
 
 </body>
 </html>
